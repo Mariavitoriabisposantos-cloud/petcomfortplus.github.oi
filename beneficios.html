@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PetComfort+ - Benefícios</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="brand">PetComfort+</a>
+
+    <nav class="menu">
+      <button class="menu__button" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown()">
+        Menu <span class="menu__chevron">▾</span>
+      </button>
+      <div id="dropdown" class="menu__dropdown">
+        <a href="index.html">Inicio</a>
+        <a href="app.html">App</a>
+        <a href="beneficios-final.html">Benefícios</a>
+        <a href="reembolso.html">Reembolso e Troca</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <h1 class="page-title">Benefícios do PetComfort+</h1>
+    <p class="slogan">Mais saúde, felicidade e tranquilidade para o seu melhor amigo.</p>
+
+    <section class="long-intro-section">
+      <p>O PetComfort+ oferece mais saúde e bem-estar para o seu pet, economia de tempo para você, tranquilidade mesmo à distância, além de durabilidade, higiene e um design moderno que valoriza sua casa. É um produto versátil, ideal para cães e gatos de todos os portes.</p>
+      <p>👉 Nos cards abaixo, você descobre em detalhes como cada benefício transforma a vida do tutor e do pet.</p>
+    </section>
+
+    <section class="cards">
+      
+      <article class="card">
+        <div class="card__image-box">
+          <i class="fas fa-paw card-icon"></i>
+        </div>
+        <h3 class="card__title">Menos gastos com saúde do pet</h3>
+        <div class="card__content">
+          <p>Um pet que dorme bem e tem menos ansiedade vive mais saudável. O PetComfort+ reduz estresse e previne problemas, ajudando a evitar visitas frequentes ao veterinário.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__image-box">
+          <i class="fas fa-clock card-icon"></i>
+        </div>
+        <h3 class="card__title">Economia de tempo para o tutor</h3>
+        <div class="card__content">
+          <p>Com o app, você programa rotinas automáticas de aquecimento, resfriamento e função calmante. Tudo acontece sozinho, liberando mais tempo para você aproveitar com seu pet.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__image-box">
+          <i class="fas fa-globe-americas card-icon"></i>
+        </div>
+        <h3 class="card__title">Ideal para quem trabalha fora ou viaja</h3>
+        <div class="card__content">
+          <p>Mesmo longe, você acompanha o bem-estar do seu pet em tempo real pelo celular. Ajuste funções, receba notificações e fique tranquilo em qualquer situação.</p>
+        </div>
+      </article>
+      
+      <article class="card">
+        <div class="card__image-box">
+          <i class="fas fa-hand-holding-heart card-icon"></i>
+        </div>
+        <h3 class="card__title">Durabilidade e higiene</h3>
+        <div class="card__content">
+          <p>Feito com materiais resistentes e fáceis de limpar, o PetComfort+ foi projetado para durar anos sem perder a qualidade, tornando a rotina mais prática e segura.</p>
+        </div>
+      </article>
+      
+      <article class="card">
+        <div class="card__image-box">
+          <i class="fas fa-lightbulb card-icon"></i>
+        </div>
+        <h3 class="card__title">Design que valoriza a casa</h3>
+        <div class="card__content">
+          <p>Moderno e sofisticado, combina com a decoração e mantém a elegância que outras camas comuns não oferecem.</p>
+        </div>
+      </article>
+      
+      <article class="card">
+        <div class="card__image-box">
+          <i class="fas fa-dog card-icon"></i>
+        </div>
+        <h3 class="card__title">Versátil para todos os pets</h3>
+        <div class="card__content">
+          <p>Adapta-se a cães e gatos de diferentes portes, sendo perfeito até para famílias com mais de um pet.</p>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+   <div class="footer-center">
+     <a href="mailto:suporte@petcomfortplus.com"><i class="fas fa-envelope"></i></a>
+     <a href="tel:+551140028999"><i class="fas fa-phone-alt"></i></a>
+     <a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+     <a href="https://www.instagram.com/seu_perfil" target="_blank"><i class="fab fa-instagram"></i></a>
+     <a href="https://www.facebook.com/seu_perfil" target="_blank"><i class="fab fa-facebook"></i></a> 
+   </div>
+ </footer>
+
+  <script>
+    // Dropdown
+    function toggleDropdown() {
+      const dd = document.getElementById('dropdown');
+      dd.classList.toggle('show');
+    }
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu')) {
+        document.getElementById('dropdown').classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

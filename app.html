@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PetComfort+ - App</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="brand">PetComfort+</a>
+
+    <nav class="menu">
+      <button class="menu__button" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown()">
+        Menu <span class="menu__chevron">▾</span>
+      </button>
+      <div id="dropdown" class="menu__dropdown">
+        <a href="index.html">Inicio</a>
+        <a href="app.html">App</a>
+        <a href="beneficios.html">Benefícios</a>
+        <a href="reembolso.html">Reembolso e Troca</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <h1 class="page-title">Controle o conforto do seu pet na palma da mão!</h1>
+    <p class="slogan">Com o aplicativo PetComfort+, o bem-estar do seu amigo está a um toque.</p>
+
+    <section class="app-topics">
+      <div class="topic-column">
+        <div class="topic-item">
+          <i class="fas fa-download topic-icon"></i>
+          <div>
+            <h3>Baixe o App</h3>
+            <p>Disponível para Android e iOS, rápido de instalar.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <i class="fas fa-link topic-icon"></i>
+          <div>
+            <h3>Conecte ao PetComfort+</h3>
+            <p>Emparelhe via Bluetooth ou Wi-Fi em poucos segundos.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <i class="fas fa-paw topic-icon"></i>
+          <div>
+            <h3>Configure o Perfil do Pet</h3>
+            <p>Informe porte, idade e preferências para personalização automática.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <i class="fas fa-thermometer-half topic-icon"></i>
+          <div>
+            <h3>Controle a Temperatura</h3>
+            <p>Ajuste aquecimento, resfriamento ou ative o modo automático.</p>
+          </div>
+        </div>
+      </div>
+      <div class="topic-column">
+        <div class="topic-item">
+          <i class="fas fa-heartbeat topic-icon"></i>
+          <div>
+            <h3>Ative a Função Calmante</h3>
+            <p>Vibração suave que simula batimentos cardíacos e reduz a ansiedade.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <i class="fas fa-chart-line topic-icon"></i>
+          <div>
+            <h3>Monitore em Tempo Real</h3>
+            <p>Acompanhe tempo de uso e receba notificações de bem-estar.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <i class="fas fa-sliders-h topic-icon"></i>
+          <div>
+            <h3>Personalize do Seu Jeito</h3>
+            <p>Programe rotinas (dia/noite), escolha intensidade e salve ajustes no app.</p>
+          </div>
+        </div>
+        <div class="topic-item">
+          <i class="fas fa-moon topic-icon"></i>
+          <div>
+            <h3>Relaxe com Tranquilidade</h3>
+            <p>Seu pet confortável, você tranquilo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="app-visuals">
+      <div class="phone-mockup">
+        <div class="screen">
+          <img src="imagnes/imag5.jpeg" alt="Captura de tela do app 1">
+        </div>
+      </div>
+
+      <div class="phone-mockup">
+        <div class="screen">
+          <img src="imagnes/imag6.jpeg" alt="Captura de tela do app 2">
+        </div>
+      </div>
+      
+      <div class="phone-mockup video-mockup">
+        <div class="screen">
+          <video src="imagnes/video1.mp4" autoplay loop muted></video>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+   <div class="footer-center">
+     <a href="mailto:suporte@petcomfortplus.com"><i class="fas fa-envelope"></i></a>
+     <a href="tel:+551140028999"><i class="fas fa-phone-alt"></i></a>
+     <a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+     <a href="https://www.instagram.com/seu_perfil" target="_blank"><i class="fab fa-instagram"></i></a>
+     <a href="https://www.facebook.com/seu_perfil" target="_blank"><i class="fab fa-facebook"></i></a> 
+   </div>
+ </footer>
+  <script>
+    // Dropdown
+    function toggleDropdown() {
+      const dd = document.getElementById('dropdown');
+      dd.classList.toggle('show');
+    }
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu')) {
+        document.getElementById('dropdown').classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

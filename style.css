@@ -1,0 +1,526 @@
+/* ===== Paleta ===== */
+:root {
+  --sky: #8ECAE6;
+  --blue: #219EBC;
+  --navy: #023047;
+  --amber: #FFB703;
+  --orange: #FB8500;
+
+  --bg: #eaf4fb;
+  --text: #0b1c28;
+  --card-bg: #f7fbff;
+
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --shadow-soft: 10px 10px 20px rgba(2,48,71,0.12), -8px -8px 18px rgba(255,255,255,0.9);
+  --inset-soft: inset 8px 8px 16px rgba(2,48,71,0.08), inset -8px -8px 16px rgba(255,255,255,0.9);
+}
+
+/* Reset */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Cabeçalho */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  background: var(--bg);
+  box-shadow: 0 6px 20px rgba(2,48,71,0.06);
+}
+.brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+/* Menu dropdown */
+.menu { position: relative; }
+.menu__button {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--card-bg);
+  color: var(--navy);
+  box-shadow: var(--shadow-soft);
+}
+.menu__button:active { box-shadow: var(--inset-soft); }
+.menu__chevron { margin-left: 6px; }
+
+.menu__dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  min-width: 200px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 6px;
+  box-shadow: var(--shadow-soft);
+  display: none;
+}
+.menu__dropdown.show { display: block; }
+.menu__dropdown a {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 500;
+}
+.menu__dropdown a:hover {
+  background: var(--sky);
+  color: var(--navy);
+}
+
+/* Layout */
+.container {
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Logo */
+.logo-box {
+  margin: 20px auto;
+  width: 220px;   
+  height: 220px; 
+  border-radius: 28px;
+  background: var(--card-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease;
+}
+.logo-img {
+  width: 80%;     
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Slogan */
+.slogan {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin: 16px 0 32px;
+}
+
+/* Cards (da página inicial) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  gap: 20px;
+  justify-content: center;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: transform .25s ease;
+}
+.card__image-box {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 12px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-icon { /* Ícones dentro dos cards da index.html */
+    font-size: 3rem;
+    color: var(--blue);
+}
+.card__title {
+  margin: 6px 0 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+.card__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
+  text-align: left;
+}
+.card:hover .card__content { max-height: 200px; }
+
+/* Card hover diminui levemente */
+.card:hover { 
+  transform: scale(0.97); 
+}
+
+/* Efeito hover aumenta logo */
+.card:hover ~ .logo-box,
+.cards:hover ~ .logo-box {
+  transform: scale(1.15); 
+}
+.logo-box:hover .logo-img {
+  transform: scale(1.1);
+}
+
+/* Preço */
+.price-note {
+  margin: 20px 0;
+  color: var(--navy);
+}
+
+/* Botão CTA */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.btn--outline {
+  color: var(--orange);
+  border: 2px solid var(--orange);
+  background: transparent;
+  box-shadow: var(--shadow-soft);
+}
+.btn--outline:hover {
+  background: rgba(251,133,0,0.1);
+}
+.cta { margin-top: 20px; }
+
+/* ================== Rodapé (Novo Estilo) ================== */
+.footer {
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center;     /* Centraliza o conteúdo verticalmente */
+  padding: 40px 30px;
+  background: var(--blue); /* Usando a cor de fundo clara para um visual mais limpo */
+  border-top: 1px solid #EAECEF;
+}
+
+.footer-center {
+  display: flex;
+  gap: 25px; /* Aumenta o espaçamento entre os ícones */
+  align-items: center;
+}
+
+.footer-center a {
+  color: var(--navy); /* Ícones com a cor principal do texto */
+  font-size: 28px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-center a.whatsapp:hover { color: #25d366; }
+.footer-center a.instagram:hover { color: #E1306C; }
+.footer-center a.facebook:hover { color: #1877F2; }
+
+.footer-center a:hover {
+  transform: scale(1.2);
+}
+
+/* ------------------ INÍCIO: REGRAS PÁGINA APP ------------------ */
+.page-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+/* Seção de Tópicos do App */
+.app-topics {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 30px; /* Espaço entre as colunas */
+    margin-top: 40px;
+    text-align: left; /* Alinha o texto à esquerda dentro dos tópicos */
+}
+
+/* Para telas menores que 768px, os tópicos ficam em uma coluna */
+@media (max-width: 768px) {
+    .app-topics {
+        grid-template-columns: 1fr;
+    }
+}
+
+.topic-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os itens dentro da coluna */
+}
+
+.topic-item {
+    display: flex;
+    align-items: flex-start; /* Alinha ícone e texto no topo */
+    gap: 15px; /* Espaço entre ícone e texto */
+}
+
+.topic-icon {
+    font-size: 2.2rem;
+    color: var(--orange); /* Cor laranja para os ícones dos tópicos */
+    min-width: 40px; /* Garante que o ícone tenha um espaço fixo */
+    text-align: center;
+}
+
+.topic-item h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: var(--navy);
+}
+
+.topic-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+
+/* Visualização do App (Mockups de Celular) */
+.app-visuals {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 30px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.phone-mockup {
+  width: 200px; 
+  height: 400px; 
+  background: #333; 
+  border-radius: 30px; 
+  border: 8px solid #333; 
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.3), -10px -10px 30px rgba(255,255,255,0.2), inset 0 0 15px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden; 
+}
+
+.phone-mockup.video-mockup {
+  width: 200px; 
+  height: 400px;
+}
+
+.phone-mockup .screen {
+  width: calc(100% - 16px); 
+  height: calc(100% - 16px);
+  background: white;
+  border-radius: 20px; 
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-mockup .screen img,
+.phone-mockup .screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 8px;
+  background: #555;
+  border-radius: 5px;
+  z-index: 10;
+}
+.phone-mockup::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: calc(50% - 30px);
+  width: 6px;
+  height: 6px;
+  background: #555;
+  border-radius: 50%;
+  z-index: 10;
+}
+/* ------------------ FIM: REGRAS PÁGINA APP ------------------ */
+/* Estilo para a seção de introdução com fundo e cantos arredondados */
+.long-intro-section {
+  background-color: var(--card-bg); /* Usa o fundo branco dos cards */
+  border-radius: var(--radius-lg);   /* Cantos arredondados definidos no :root */
+  box-shadow: var(--shadow-subtle);  /* Sombra sutil para destaque */
+  padding: 40px;                     /* Espaçamento interno generoso */
+  margin: 40px auto 60px;            /* Margens superior, inferior e centralização */
+  max-width: 800px;                  /* Largura máxima do bloco */
+  text-align: left;                  /* Alinha o texto à esquerda */
+  line-height: 1.8;                  /* Espaçamento entre as linhas para leitura fácil */
+  color: var(--navy);                /* Cor do texto para contraste */
+  font-size: 1.1rem;                 /* Tamanho da fonte */
+  border: 1px solid #EAECEF;         /* Borda sutil para definir o bloco */
+}
+
+.long-intro-section p {
+  margin-bottom: 25px; /* Espaço entre os parágrafos */
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .long-intro-section {
+    padding: 30px 20px; /* Reduz o padding em telas menores */
+    margin: 30px auto 50px;
+    font-size: 1rem;
+  }
+}
+/* ================== REGRAS PÁGINA REEMBOLSO (Cards) ================== */
+.policy-intro {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: left;
+  line-height: 1.7;
+  color: var(--text);
+  padding: 0 15px;
+}
+
+.policy-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.policy-block h3 {
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--blue);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.policy-block ul,
+.policy-block ol {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.policy-block li {
+    margin-bottom: 8px;
+}
+/* ================== Media Queries para Dispositivos Móveis ================== */
+
+@media (max-width: 768px) {
+  /* Regras gerais para telas menores */
+  .container {
+    margin: 20px auto;
+    padding: 0 16px;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  
+  .slogan {
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  /* Ajustes para a navegação */
+  .header {
+      padding: 12px 16px;
+  }
+
+  /* Ajustes para a página inicial */
+  .about-text {
+      text-align: center;
+  }
+  
+  /* Ajustes para a página do aplicativo */
+  .app-topics {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .topic-item {
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .topic-item p {
+      text-align: center;
+  }
+
+  .phone-mockup {
+      width: 180px;
+      height: 360px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .phone-mockup.video-mockup {
+      width: 200px;
+      height: 400px;
+  }
+
+  .app-visuals {
+      gap: 20px;
+  }
+  
+  /* Ajustes para a página de benefícios e reembolso */
+  .long-intro-section,
+  .policy-section {
+      font-size: 1rem;
+      padding: 0 10px;
+      margin: 20px auto 30px;
+  }
+  
+  .policy-cards {
+      grid-template-columns: 1fr;
+      gap: 20px;
+  }
+
+  /* Ajustes para o rodapé */
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 16px;
+  }
+  
+  .footer-left {
+      align-items: center;
+      margin-bottom: 15px;
+  }
+  
+  .footer-right {
+      justify-content: center;
+      gap: 15px;
+  }
+}

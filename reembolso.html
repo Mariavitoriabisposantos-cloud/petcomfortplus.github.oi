@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PetComfort+ - Reembolso e Troca</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="brand">PetComfort+</a>
+
+    <nav class="menu">
+      <button class="menu__button" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown()">
+        Menu <span class="menu__chevron">▾</span>
+      </button>
+      <div id="dropdown" class="menu__dropdown">
+        <a href="index.html">Inicio</a>
+        <a href="app.html">App</a>
+        <a href="beneficios-final.html">Benefícios</a>
+        <a href="reembolso.html">Reembolso e Troca</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <h1 class="page-title">Política de Reembolso e Troca</h1>
+
+    <section class="policy-section">
+      <p>A satisfação do seu pet e a sua tranquilidade são nossa maior prioridade. Se, por qualquer motivo, você não estiver satisfeito com o PetComfort+, nós garantimos a sua devolução e reembolso, de acordo com as nossas políticas.</p>
+
+      <section class="policy-section">
+  <p class="policy-intro">A satisfação do seu pet e a sua tranquilidade são nossa maior prioridade. Se, por qualquer motivo, você não estiver satisfeito com o PetComfort+, nós garantimos a sua devolução e reembolso, de acordo com as nossas políticas.</p>
+
+  <div class="cards policy-cards">
+    <article class="card policy-block">
+      <h3>Política de Devolução</h3>
+      <ul>
+        <li>Você pode solicitar a devolução do produto em até <strong>7 dias</strong> após o recebimento.</li>
+        <li>O produto deve estar na embalagem original, sem sinais de uso, e com todos os acessórios e manuais.</li>
+        <li>Embalagens danificadas não serão aceitas.</li>
+      </ul>
+    </article>
+
+    <article class="card policy-block">
+      <h3>Política de Reembolso</h3>
+      <ul>
+        <li>Após a aprovação da devolução e o recebimento do produto em nosso centro de distribuição, o reembolso será processado em até <strong>15 dias úteis</strong>.</li>
+        <li>O valor será devolvido através do mesmo método de pagamento utilizado na compra (cartão de crédito, Pix, etc.).</li>
+      </ul>
+    </article>
+
+    <article class="card policy-block">
+      <h3>Como Solicitar</h3>
+      <p>Para iniciar o processo de devolução e reembolso, por favor, siga os passos abaixo:</p>
+      <ol>
+        <li>Entre em contato com nossa equipe de suporte pelo e-mail <strong>suporte@petcomfortplus.com</strong>.</li>
+        <li>No e-mail, informe o número do pedido e o motivo da devolução.</li>
+        <li>Nossa equipe responderá com as instruções detalhadas para o envio do produto.</li>
+      </ol>
+    </article>
+
+    <article class="card policy-block">
+      <h3>Dúvidas?</h3>
+      <p>Se tiver qualquer pergunta sobre nossa política de reembolso, entre em contato conosco. Estamos aqui para ajudar e garantir a melhor experiência para você e seu pet.</p>
+    </article>
+  </div>
+</section>
+      
+    </section>
+
+  </main>
+
+  <footer class="footer">
+   <div class="footer-center">
+     <a href="mailto:suporte@petcomfortplus.com"><i class="fas fa-envelope"></i></a>
+     <a href="tel:+551140028999"><i class="fas fa-phone-alt"></i></a>
+     <a href="https://wa.me/5511999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+     <a href="https://www.instagram.com/seu_perfil" target="_blank"><i class="fab fa-instagram"></i></a>
+     <a href="https://www.facebook.com/seu_perfil" target="_blank"><i class="fab fa-facebook"></i></a> 
+   </div>
+ </footer>
+
+  <script>
+    function toggleDropdown() {
+      const dd = document.getElementById('dropdown');
+      dd.classList.toggle('show');
+    }
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu')) {
+        document.getElementById('dropdown').classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
